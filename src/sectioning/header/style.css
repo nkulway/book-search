@@ -1,0 +1,19 @@
+header {
+    background-color: #888;
+    padding: 40px 0;
+}
+
+.navs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navs ul {
+    
+}
+
+.navs ul li {
+    display: inline-block;
+    margin-left: 16px;
+}
+
