@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './style.css';
 import App from './app';
 import reportWebVitals from './reportWebVitals';
@@ -8,9 +8,9 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-    <Routes>
-    <App />
-    </Routes>
+     <Routes>
+      <Route path="/" element={<App />} />
+     </Routes>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
