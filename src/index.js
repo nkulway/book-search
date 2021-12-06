@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import About from './routes/about/about'
+import Login from './routes/login/login';
+import Search from './routes/search/search';
 import './style.css';
 import App from './app';
 import reportWebVitals from './reportWebVitals';
@@ -8,9 +11,12 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-     <Routes>
+    <Routes>
       <Route path="/" element={<App />} />
-     </Routes>
+      <Route path="about" element={<About />} />
+      <Route path="search" element={<Search />} />
+      <Route path="login" element={<Login />} />
+    </Routes>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

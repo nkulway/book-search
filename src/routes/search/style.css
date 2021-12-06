@@ -1,0 +1,38 @@
+form {
+  margin-top: 40px auto 0 auto;
+  max-width: 300px;
+}
+
+.form .form__field {
+  display: flex;
+  justify-content: space-between;
+  margin: 14px 0;
+}
+
+.form button {
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 4px 16px;
+  transition: all 400ms ease-in-out;
+}
+
+.form button:hover {
+  background-color: #333;
+  color: white;
+
+}
+
+.results {
+background-color: #eee;
+margin-top: 40px;
+padding: 26px 0;
+}
+
+.results li {
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.results h2 {
+text-decoration: underline;  
+}

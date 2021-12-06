@@ -1,11 +1,13 @@
+import Header from '../../sectioning/header/header'
 import './style.css';
 
-function Search() {
+function Login() {
   return (
      <div>
-       I am Search
+       <Header />
+       I am login
      </div>
   );
 }
 
-export default Search;
+export default Login;
