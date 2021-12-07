@@ -23,10 +23,10 @@ function Login() {
     } else {
         loginDataCopy.password = value;
     }
-    console.log(loginDataCopy)
+    // console.log(loginDataCopy)
     setLoginData(loginDataCopy)
 
-    console.log(loginData)
+    // console.log(loginData)
 }
 
 const handleSubmit = e => {
