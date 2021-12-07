@@ -1,3 +1,9 @@
+.center {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
 form {
   margin-top: 40px auto 0 auto;
   max-width: 300px;
@@ -34,5 +40,6 @@ padding: 26px 0;
 }
 
 .results h2 {
+text-align: center;
 text-decoration: underline;  
 }

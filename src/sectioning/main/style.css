@@ -17,3 +17,9 @@ header {
     margin-left: 16px;
 }
 
+
+main {
+    flex: 1 0 auto;
+    padding: 30px;
+}
+

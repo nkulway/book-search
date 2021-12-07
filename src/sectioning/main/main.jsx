@@ -1,11 +1,11 @@
 import './style.css';
 
-function Footer() {
+function Main() {
   return (
-     <footer>
-       I am footer
-     </footer>
+      <main>
+        I am main
+      </main>
   );
 }
 
-export default Footer;
+export default Main;

@@ -1,4 +1,5 @@
 import Header from '../../sectioning/header/header'
+import Footer from '../../sectioning/footer/footer'
 import { useState } from 'react';
 import Modal from '../../components/modal/modal'
 import'./style.css'
@@ -41,11 +42,6 @@ function Search() {
         })
         setResponse(listOfBooks)
     }
-
-    // const renderDescription = details => {
-    //     let str = (<span>{details}</span>)
-    //     setDescription(str)
-    // }
     
     const handleSubmit = e => {
         e.preventDefault();
@@ -72,6 +68,7 @@ function Search() {
   return (
       <>
     <Header />
+    <div className="center">
     <form className="form" onSubmit={handleSubmit}>
         <div className="form__field">
          <label htmlFor="author">Author</label>
@@ -93,6 +90,8 @@ function Search() {
         </div>
     )}
     {bookDescription && ( <Modal descirption={bookDescription} closeModal={closeModal} />)}
+    </div>
+    <Footer />
     </>
   );
 }
