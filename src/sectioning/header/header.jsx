@@ -17,6 +17,9 @@ function Header() {
             <li>
             <NavLink to="/login">Login</NavLink>
               </li>
+              <li>
+              <NavLink to="/redux">Redux</NavLink>
+              </li>
           </ul>
         </nav>
       </div>
