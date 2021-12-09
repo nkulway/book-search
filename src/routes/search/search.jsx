@@ -1,5 +1,4 @@
-import Header from '../../sectioning/header/header'
-import Footer from '../../sectioning/footer/footer'
+import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
 import Modal from '../../components/modal/modal'
 import'./style.css'
@@ -67,7 +66,6 @@ function Search() {
 
   return (
       <>
-    <Header />
     <div className="center">
     <form className="form" onSubmit={handleSubmit}>
         <div className="form__field">
@@ -86,12 +84,11 @@ function Search() {
         <ul className="results__books" onClick={handleClick}>{response}</ul>
         <br></br>
         <h2>About the Book You Chose</h2>
-        {/* <div>{description}</div> */}
         </div>
     )}
     {bookDescription && ( <Modal descirption={bookDescription} closeModal={closeModal} />)}
     </div>
-    <Footer />
+    <Outlet />
     </>
   );
 }
