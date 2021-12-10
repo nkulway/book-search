@@ -1,8 +1,9 @@
-import { ADD_NEW_FRIENDS } from '../actionTypes'
+import { ADD_NEW_FRIENDS, EXECUTE_SEARCH } from '../actionTypes'
 
 
 const initialState = {
-friends: ['anna', 'billy', 'carlos']
+friends: ['anna', 'billy', 'carlos'],
+searchResults: []
 }
 function appReducer(state = initialState, action) {
   switch (action.type) {
@@ -11,6 +12,13 @@ function appReducer(state = initialState, action) {
         friends: [...state.friends, action.friend]
       }
     }
+    case EXECUTE_SEARCH: {
+      return Object.assign({}, state, {
+        ...state, 
+
+        searchResults: [...state.searchResults, ...action.searchQueryResults]
+      })
+      }
     default:
       return state;
   }
