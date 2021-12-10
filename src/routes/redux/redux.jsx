@@ -1,18 +1,19 @@
 import { useState } from "react";
-import getNewFriends from "../../redux/actions/getNewFriends";
+import addNewFriend from "../../redux/actions/addNewFriend";
 import { connect } from "react-redux";
 
 import "./style.css";
 
-function Redux({ friends, getNewFriends }) {
-  const [newFriend, setNewFriend] = useState(null);
+function Redux({ friends, addNewFriend }) {
+  const [newFriend, setNewFriend] = useState('');
 
   const amigos = friends.map((friend, index) => {
     return <li key={index}>{friend}</li>;
   });
 
   const handleClick = () => {
-    getNewFriends([newFriend]);
+    addNewFriend(newFriend);
+    setNewFriend('')
   };
 
   const handleChange = (e) => {
@@ -23,7 +24,7 @@ function Redux({ friends, getNewFriends }) {
     <div>
       <div className="about">
         <ul>{amigos}</ul>
-        <input onChange={handleChange} type="text" />
+        <input onChange={handleChange} type="text" value={newFriend} />
         <button onClick={handleClick}>Get New Friends</button>
       </div>
     </div>
@@ -31,7 +32,7 @@ function Redux({ friends, getNewFriends }) {
 }
 
 const mapDispatchToProps = {
-  getNewFriends,
+  addNewFriend,
 };
 
 // state lets us know its coming from the store

@@ -1,1 +1,1 @@
-export const GET_NEW_FRIENDS = 'GET_NEW_FRIENDS';
+export const ADD_NEW_FRIENDS = 'ADD_NEW_FRIENDS';
