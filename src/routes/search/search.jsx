@@ -3,20 +3,10 @@ import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { executeSearch } from "../../redux/actions/actions";
 import Modal from "../../components/modal/modal";
+import { createListOfBooks } from "../../utils"
 import "./style.css";
 
 function Search({ executeSearch, results }) {
-
-  const createListOfBooks = (books) => {
-    const listOfBooks = books.map((book, index) => {
-      return (
-        <li data-bookid={book.key} key={index}>
-          {book.title} by {book.author_name}
-        </li>
-      );
-    });
-    return listOfBooks;
-  };
 
   const [fieldData, setFieldData] = useState({
     author: null,
@@ -53,11 +43,16 @@ useEffect(() => {
     e.preventDefault();
     executeSearch(fieldData.author, fieldData.title);
   };
+  const handleClick = (e) => {
+      e.preventDefault();
+        let target = e.target.getAttribute("data-bookid");
+        fetch(`https://openlibrary.org${target}.json`)
+           .then((result) => result.json())
+           // .then(data => renderDescription(data.description))
+           .then((data) => setBookDescription(data.description))
+           .catch((err) => console.log(err));
+       };
 
-
-  const handleClick = () => {
-      executeSearch()
-  }
 
   const closeModal = () => {
     setBookDescription(null);

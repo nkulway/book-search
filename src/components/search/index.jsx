@@ -26,10 +26,7 @@ function Search() {
         } else {
             fieldDataCopy.title = value;
         }
-        console.log(fieldDataCopy)
         setFieldData(fieldDataCopy)
-
-        console.log(fieldData)
     }
 
     

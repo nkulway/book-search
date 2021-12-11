@@ -20,15 +20,11 @@ function Login() {
     } else {
       loginDataCopy.password = value;
     }
-    // console.log(loginDataCopy)
     setLoginData(loginDataCopy);
-
-    // console.log(loginData)
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(loginData);
   };
 
   return (
