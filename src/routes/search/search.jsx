@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { executeSearch } from "../../redux/actions/addNewFriend";
+import { executeSearch } from "../../redux/actions/actions";
 import Modal from "../../components/modal/modal";
 import "./style.css";
 
@@ -23,7 +23,6 @@ function Search({ executeSearch, results }) {
     title: null,
   });
 
-  const [response, setResponse] = useState(null);
   const [bookDescription, setBookDescription] = useState(null);
   const [listOfBooks, setListOfBooks] = useState('')
 
@@ -78,7 +77,7 @@ useEffect(() => {
           </div>
           <button type="submit">Submit</button>
         </form>
-        {results && (
+        {results.length > 0 && (
           <div className="results">
             <h2>Search Results</h2>
             <ul className="results__books" onClick={handleClick}>
