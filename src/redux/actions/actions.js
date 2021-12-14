@@ -23,3 +23,10 @@ const fetchSuccess = (isSuccess, data) => {
   }
 }
 }
+
+export const setModalMessage = message => dispatch => {
+  dispatch({
+    type: types.SET_MODAL_MESSAGE,
+    message
+  })
+}

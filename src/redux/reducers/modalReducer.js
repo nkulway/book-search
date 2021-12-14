@@ -1,4 +1,6 @@
-import { EXECUTE_SEARCH_FAIL } from '../actionTypes'
+import {  
+  SET_MODAL_MESSAGE 
+} from '../actionTypes'
 
 const initialState = {
   message: ''
@@ -7,9 +9,9 @@ const initialState = {
 
 function modalReducer(state = initialState, action) {
   switch (action.type) {
-      case EXECUTE_SEARCH_FAIL: {
+      case SET_MODAL_MESSAGE: {
         return  Object.assign({}, state, {
-          message: action.errorMessage
+          message: action.message
         })
       }
     default:
