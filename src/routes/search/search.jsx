@@ -72,7 +72,7 @@ useEffect(() => {
           </div>
           <button type="submit">Submit</button>
         </form>
-        {results.length > 0 && (
+        {results && results.length > 0 && (
           <div className="results">
             <h2>Search Results</h2>
             <ul className="results__books" onClick={handleClick}>
