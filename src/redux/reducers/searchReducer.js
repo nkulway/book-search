@@ -1,3 +1,5 @@
+// corresponds with our results slice of state
+
 import { EXECUTE_SEARCH } from '../actionTypes'
 
 const initialState = {

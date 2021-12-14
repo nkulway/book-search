@@ -1,3 +1,5 @@
+//corresponds to the message slice of state
+
 import { SET_MODAL_MESSAGE } from '../actionTypes'
 
 const initialState = {

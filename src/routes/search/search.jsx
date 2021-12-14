@@ -35,6 +35,8 @@ useEffect(() => {
     setFieldData(fieldDataCopy);
   };
 
+
+  // hit submit to execute a search w/ action creator
   const handleSubmit = (e) => {
     e.preventDefault();
     executeSearch(fieldData.author, fieldData.title);
@@ -44,6 +46,7 @@ useEffect(() => {
         let target = e.target.getAttribute("data-bookid");
         fetch(`https://openlibrary.org${target}.json`)
            .then(result => result.json())
+           // if this result is good we talk to the action creator
            .then(data => setModalMessage(data.description))
            .catch((err) => console.log(err));
        };

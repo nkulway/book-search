@@ -20,8 +20,10 @@ function Main({ modalMessage }) {
         </Route>
         <Route path="*" element={<p>There's nothing here!</p>} />
         </Routes>
+        {/* if there is a modal message go ahead and render the modal
+        and send the modal down as a prop */}
         {modalMessage && (
-          <Modal descirption={modalMessage} />
+          <Modal />
         )}
       </main>
   );
