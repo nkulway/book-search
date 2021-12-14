@@ -18,8 +18,8 @@ const fetchSuccess = (isSuccess, data) => {
   }
 } else {
   return {
-    type: types.EXECUTE_SEARCH_FAIL,
-    errorMessage: data
+    type: types.SET_MODAL_MESSAGE,
+    message: data
   }
 }
 }

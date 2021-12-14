@@ -2,11 +2,10 @@ import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { executeSearch, setModalMessage } from "../../redux/actions/actions";
-import Modal from "../../components/modal/modal";
 import { createListOfBooks } from "../../utils"
 import "./style.css";
 
-function Search({ executeSearch, modalMessage, results, setModalMessage }) {
+function Search({ executeSearch, results, setModalMessage }) {
 
   const [fieldData, setFieldData] = useState({
     author: null,
@@ -36,8 +35,6 @@ useEffect(() => {
     setFieldData(fieldDataCopy);
   };
 
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
     executeSearch(fieldData.author, fieldData.title);
@@ -50,11 +47,6 @@ useEffect(() => {
            .then(data => setModalMessage(data.description))
            .catch((err) => console.log(err));
        };
-
-
-  const closeModal = () => {
-    // setBookDescription(null);
-  };
 
   return (
     <>
@@ -79,9 +71,6 @@ useEffect(() => {
             <br></br>
             <h2>About the Book You Chose</h2>
           </div>
-        )}
-        {modalMessage && (
-          <Modal descirption={modalMessage} closeModal={closeModal} />
         )}
       </div>
       <Outlet />

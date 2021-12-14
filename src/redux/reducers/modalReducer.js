@@ -1,6 +1,4 @@
-import {  
-  SET_MODAL_MESSAGE 
-} from '../actionTypes'
+import { SET_MODAL_MESSAGE } from '../actionTypes'
 
 const initialState = {
   message: ''
